@@ -2,6 +2,9 @@
 *.log
 */.idea/*
 .metadata
+.classpath
+.project
+.settings
 
 # sbt specific
 .cache
