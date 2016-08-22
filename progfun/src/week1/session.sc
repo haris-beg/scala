@@ -33,4 +33,9 @@ object session {
   // test the gcd function
   gcd(14, 21)                                     //> res4: Int = 7
 
+  // Factorial function
+  def factorial(n: Int): Int =
+    if (n == 0) 1 else n * factorial(n - 1)       //> factorial: (n: Int)Int
+  //test the factorial function
+  factorial(4)                                    //> res5: Int = 24
 }
