@@ -24,4 +24,13 @@ object session {
   sqrt(4)                                         //> res1: Double = 2.000609756097561
   sqrt(1e-60)                                     //> res2: Double = 1.0000788456669447E-30
   sqrt(1e60)                                      //> res3: Double = 1.0000788456669446E30
+
+  // Greatest Common Denominator (Euclid's Theorem)
+  // An example of Tail Recursion
+  def gcd(a: Int, b: Int): Int =
+    if (b == 0) a else gcd(b, a % b)              //> gcd: (a: Int, b: Int)Int
+
+  // test the gcd function
+  gcd(14, 21)                                     //> res4: Int = 7
+
 }
