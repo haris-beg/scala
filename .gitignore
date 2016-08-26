@@ -1,6 +1,6 @@
 *.class
 *.log
-*/.idea/*
+.idea
 .metadata
 .classpath
 .project
