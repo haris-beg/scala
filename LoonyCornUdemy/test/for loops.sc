@@ -30,3 +30,8 @@ for (i <- 0 to daysOfWeekList.size - 1) {
 for (i <- 0 until daysOfWeekList.size) {
   println(daysOfWeekList(i))
 }
+
+// for loop combined with if condition (Pattern Guard)
+for (day <- daysOfWeekList if day == "Mon") {
+  println("Manic Monday")
+}
