@@ -27,3 +27,37 @@ val typeOfDay2 = dayOfWeek match {
     errorString
   }
 }
+
+// Down Casting with Pattern Variables, ie
+// Matching on the data type
+var radius:Any = 10
+val typeOfRadius = radius match {
+  case radius:Int => "Integer"
+  case radius:String => "String"
+  case radius:Double => "Double"
+  case _ => "Any"
+}
+
+// String derives from AnyRef
+radius = 10.0
+val typeOfRadius1 = radius match {
+  case radius: Int => "Integer"
+  case radius: AnyRef => "String"
+  case _ => "Any"
+}
+
+val typeOfRadius2 = radius match {
+  case radius:Int => "Integer"
+  case radius:String => "String"
+  case _ => "Any"
+}
+
+// scrutinee must be a base type
+// this is a quirk of match expression
+//val radius3 = "10"
+//val typeOfRadius3 = radius3 match {
+//  case radius3:Int => "Integer"
+//  case radius3:String => "String"
+//  case radius3: Double => "Double"
+//  case _ => "Any"
+//}
