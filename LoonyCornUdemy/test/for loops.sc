@@ -35,3 +35,9 @@ for (i <- 0 until daysOfWeekList.size) {
 for (day <- daysOfWeekList if day == "Mon") {
   println("Manic Monday")
 }
+
+// Nested for loops
+for {i <- 0 until 7
+    j <- 0 to 10} {
+  println(s"$i, $j")
+}
