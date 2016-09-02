@@ -74,3 +74,13 @@ def printPairTypes[K,V](k:K, v:V) = {
 }
 
 printPairTypes(12, "12")
+
+// Vararg parameters
+def concatStrings(strings:String*) = {
+  var builtUpString = ""
+  for (s <- strings) builtUpString = builtUpString + " " + s
+  builtUpString
+}
+
+concatStrings("A", "B", "C")
+concatStrings("A", "B", "C", "D")
