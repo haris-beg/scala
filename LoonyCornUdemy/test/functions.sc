@@ -36,12 +36,27 @@ val perimeterOfSquare = 20.0
 
 
 // Nested functions
-def getCircleStats(r:Double) = {
-  val PI = 3.14
+def getCircleStats(r:Double, PI:Double = 3.14) = {
+  //val PI = 3.14
   def getCircleArea(r:Double) = PI * r * r
   def getCircleCircumference(r:Double) = 2 * PI * r
   (getCircleArea(r),getCircleCircumference(r))
 }
+
+def getCircleStats2(PI:Double = 3.14, r:Double) = {
+  //val PI = 3.14
+  def getCircleArea(r:Double) = PI * r * r
+  def getCircleCircumference(r:Double) = 2 * PI * r
+  (getCircleArea(r),getCircleCircumference(r))
+}
+
+// Parameter default values
+getCircleStats(10)
+getCircleStats(10, 3.14159)
+//getCircleStats2(10)
+getCircleStats2(r = 10)
+
+
 
 // Named function parameters
 // Invoking function with parameters in any order
