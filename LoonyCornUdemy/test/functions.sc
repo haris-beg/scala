@@ -113,3 +113,36 @@ val calcPI2 = getPI _
 def getAreaOfRectangle(l:Double, b:Double):Double = l*b
 val calcRectangleAre1: (Double, Double) => Double = getAreaOfRectangle
 val calcRectangleAre2 = getAreaOfRectangle _
+
+
+// Higher order functions
+// Below is a typical string comparator function
+def compareStrings(s1:String, s2:String):Int = {
+  if (s1 == s2) 0
+  else if (s1 > s2) -1
+  else {1}
+}
+
+def compareStringsDescending(s1:String, s2:String):Int = {
+  if (s1 == s2) 0
+  else if (s1 > s2) 1
+  else {-1}
+}
+
+// the following higher order function takes a function parameter
+def smartCompare(s1:String, s2:String,
+                 cmpFn:(String,String) => Int):Int = {
+  cmpFn(s1,s2)
+}
+
+// the following higher order function returns a function
+// the return type is "(String,String) => Int"
+def getComparator(reverse:Boolean):(String,String) => Int = {
+  if (reverse == true) compareStringsDescending
+  else compareStrings
+}
+
+val cmpFn = getComparator(true)
+cmpFn("abc","xyz")
+cmpFn("xyz","abc")
+cmpFn("xxx","xxx")
