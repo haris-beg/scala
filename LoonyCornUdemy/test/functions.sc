@@ -17,3 +17,16 @@ sayHello()
 sayHello
 sayHello2
 //sayHello2()
+
+
+val perimeterOfSquare = 20.0
+
+// Invoking a function with an expression block
+// Packing function parameters
+(getRectangleArea _).tupled(
+  {
+    val sideOfSquare = perimeterOfSquare/4;
+    (sideOfSquare, sideOfSquare)
+  }
+
+)
