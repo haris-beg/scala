@@ -146,3 +146,18 @@ val cmpFn = getComparator(true)
 cmpFn("abc","xyz")
 cmpFn("xyz","abc")
 cmpFn("xxx","xxx")
+
+
+// Function LITERALS (aka ANONYMOUS or LAMBDA functions)
+val compareStringsLiteral = (s1:String, s2:String) => {
+  if (s1 == s2) 0
+  else if (s1 > s2) -1
+  else {1}
+}:Int
+
+compareStringsLiteral("abc","xyz")
+compareStringsLiteral("xyz","abc")
+compareStringsLiteral("abc","abc")
+compareStringsLiteral("abc","xyz") == compareStrings("abc","xyz")
+compareStringsLiteral("xyz","abc") == compareStrings("xyz","abc")
+compareStringsLiteral("abc","abc") == compareStrings("abc","abc")
