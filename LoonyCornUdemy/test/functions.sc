@@ -84,3 +84,32 @@ def concatStrings(strings:String*) = {
 
 concatStrings("A", "B", "C")
 concatStrings("A", "B", "C", "D")
+
+
+// Assigning functions to values
+val PI = 3.14
+def getCircleArea(r:Double):Double = PI * r * r
+
+// this won't work
+//val calcCircleArea = getCircleArea
+
+// But this will work, because we specify the
+// type of the l-value to match the type of the function
+// "(Double) => Double"
+val calcCircleArea: (Double) => Double = getCircleArea
+
+// we can also use make this work, as shown below
+// this means that l-value is a function and has the
+// exact same signature as the r-value function
+val calcCircleArea1 = getCircleArea _
+
+//more examples of assigning functions to values
+// getPI is a function of type "() => Double"
+def getPI() = {PI}
+val calcPI: () => Double = getPI
+val calcPI2 = getPI _
+
+// getAreaOfRectangle function's type is "(Double,Double) => Double"
+def getAreaOfRectangle(l:Double, b:Double):Double = l*b
+val calcRectangleAre1: (Double, Double) => Double = getAreaOfRectangle
+val calcRectangleAre2 = getAreaOfRectangle _
