@@ -5,7 +5,10 @@
 // a named function
 // how is this different from methods?
 def getRectangleArea(length:Double, breadth:Double):Double =
-{length * breadth}
+{
+  println(s"l = $length, b = $breadth");
+  length * breadth
+}
 
 val area = getRectangleArea(4,6)
 
@@ -39,5 +42,9 @@ def getCircleStats(r:Double) = {
   def getCircleCircumference(r:Double) = 2 * PI * r
   (getCircleArea(r),getCircleCircumference(r))
 }
+
+// Named function parameters
+// Invoking function with parameters in any order
+getRectangleArea(breadth = 5, length = 10)
 
 
