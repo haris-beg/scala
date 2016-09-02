@@ -63,3 +63,14 @@ getCircleStats2(r = 10)
 getRectangleArea(breadth = 5, length = 10)
 
 
+// Type Parameters: Parametric Polymorphism
+val someList = 2 :: 1 :: "bar" :: "foo" :: Nil
+//val someList:List[String] = 2 :: 1 :: "bar" :: "foo" :: Nil
+
+def printPairTypes[K,V](k:K, v:V) = {
+  val keyType = k.getClass
+  val valueType = v.getClass
+  println(s"$k, $v are values of types $keyType, $valueType")
+}
+
+printPairTypes(12, "12")
